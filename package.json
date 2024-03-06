@@ -12,6 +12,7 @@
     "@reduxjs/toolkit": "^2.2.1",
     "@stripe/stripe-js": "^3.0.7",
     "cloudinary": "^2.0.2",
+    "mongoose": "^8.2.1",
     "next": "14.1.0",
     "next-auth": "^4.24.6",
     "react": "^18",
