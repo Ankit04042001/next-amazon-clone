@@ -25,7 +25,7 @@ function CartPayment() {
     const handleCheckout = async ()=>{
         const stripe = await stripePromise;
         
-        const response = await fetch('/api/checkout',{
+        const response = await fetch('/api/checkout', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
@@ -63,8 +63,8 @@ function CartPayment() {
             </p>
             {
                 userInfo ? (
-                    <div className='flex flex-col items-center'>
-                    <button onClick={handleCheckout} className='w-full h-10 text-sm font-semibold bg-amazon_blue text-white rounded-lg hover:bg-amazon_yellow hover:text-black duration-300'>Proceed to Buy</button>
+                    <div onClick={handleCheckout} className='flex flex-col items-center'>
+                    <button className='w-full h-10 text-sm font-semibold bg-amazon_blue text-white rounded-lg hover:bg-amazon_yellow hover:text-black duration-300'>Proceed to Buy</button>
                 </div>
                 ) : (
 

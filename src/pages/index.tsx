@@ -23,7 +23,7 @@ export default function Home({productData}:Props) {
 // SSR for data fetching
 
 export const getServerSideProps = async () =>{
-  const res = await fetch("http://localhost:3000/api/getProductData");
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/getProductData`);
   const productData = await res.json();
   return {props : {productData}}
 }
