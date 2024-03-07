@@ -14,7 +14,7 @@ interface Item {
     oldPrice: number;
     price: number;
     title: string;
-    _id: number;
+    id: number;
     quantity: number;
 }
 interface cartProductProps {
@@ -45,7 +45,7 @@ function CartProduct({ item }: cartProductProps) {
                     <div className="flex items-center gap-6">
                         <div className="flex items-center mt-1 justify-between border border-gray-300 px-4 py-1 rounded-full w-28 shadow-lg shadow-gray-300">
                             <span onClick={()=>dispatch(increaseQuantity({
-                                _id:item._id,
+                                id:item.id,
                                 brand:item.brand,
                                 category:item.category,
                                 image:item.image,
@@ -58,7 +58,7 @@ function CartProduct({ item }: cartProductProps) {
                             }))} className="w-6 h-6 flex items-center justify-center rounded-full text-base bg-transparent hover:bg-gray-300 cursor-pointer decoration-purple-300"><LuPlus /></span>
                             <span>{item.quantity}</span>
                             <span onClick={()=>dispatch(decreaseQuantity({
-                                _id:item._id,
+                                id:item.id,
                                 brand:item.brand,
                                 category:item.category,
                                 image:item.image,
@@ -70,7 +70,7 @@ function CartProduct({ item }: cartProductProps) {
                                 quantity:1
                             }))} className="w-6 h-6 flex items-center justify-center rounded-full text-base bg-transparent hover:bg-gray-300 cursor-pointer decoration-purple-300"><LuMinus /></span>
                         </div>
-                        <div onClick={()=>dispatch(deleteProduct(item._id))} className="flex items-center text-sm font-medium text-gray-400 hover:text-red-600 cursor-pointer duration-300">
+                        <div onClick={()=>dispatch(deleteProduct(item.id))} className="flex items-center text-sm font-medium text-gray-400 hover:text-red-600 cursor-pointer duration-300">
                             <IoMdClose  className="mt-[2px]"/>
                             <p>remove</p>
                         </div>

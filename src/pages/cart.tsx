@@ -19,7 +19,7 @@ function Cart() {
             </div>
             <div className='pt-2 flex flex-col gap-2'>
               {productData.map((item: StoreProduct) => (
-                <div key={item._id} className='pt-2 flex flex-col gap-2'>
+                <div key={item.id} className='pt-2 flex flex-col gap-2'>
                   <CartProduct item={item} />
                 </div>
               ))}
