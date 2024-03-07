@@ -7,7 +7,7 @@ export interface ProductProps{
     oldPrice:number;
     price:number;
     title:string;
-    _id:number;
+    id:number;
 }
 
 export interface StoreProduct{
@@ -19,7 +19,7 @@ export interface StoreProduct{
     oldPrice:number;
     price:number;
     title:string;
-    _id:number;
+    id:number;
     quantity:number;
 }
 
