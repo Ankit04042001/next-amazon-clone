@@ -6,6 +6,7 @@ interface NextState{
     favoriteData:StoreProduct[];
     allProducts:StoreProduct[];
     userInfo:null | string;
+    isLoading : Boolean
 }
 
 const initialState:NextState = {
@@ -13,6 +14,7 @@ const initialState:NextState = {
     favoriteData: [],
     allProducts: [],
     userInfo : null,
+    isLoading : false,
 }
 
 export const nextSlice = createSlice({
@@ -20,8 +22,8 @@ export const nextSlice = createSlice({
     initialState,
     reducers:{
         addToCart:(state, action)=>{
-            console.log(state.productData)
             const existingProduct = state.productData.find((item:StoreProduct)=>item.id === action.payload.id);
+
             if(existingProduct){
                 existingProduct.quantity += action.payload.quantity
             }else{
@@ -70,11 +72,14 @@ export const nextSlice = createSlice({
         },
         setAllProducts: (state, action) =>{
             state.allProducts = action.payload;
-        }
+        },
+        setIsLoading: (state, action) =>{
+            state.isLoading = action.payload;
+        },
     } 
 })
 
 
-export const {addToCart, addToFavorite, increaseQuantity, decreaseQuantity, deleteProduct, resetCart, addUser, removeUser, setAllProducts} = nextSlice.actions;
+export const {addToCart, addToFavorite, increaseQuantity, decreaseQuantity, deleteProduct, resetCart, addUser, removeUser, setAllProducts, setIsLoading} = nextSlice.actions;
 
 export default nextSlice.reducer;

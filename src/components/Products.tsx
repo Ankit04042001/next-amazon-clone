@@ -27,7 +27,7 @@ function Products({ productData }: any) {
               <Image priority className='w-[85%] h-full object-contain scale-90 hover:scale-100 trasition-transform duration-300' width={300} height={300} src={image} alt='productImage' />
               <div className='w-12 h-24 absolute bottom-10 right-0 border-[1px] border-gray-400 bg-white rounded-md flex flex-col translate-x-20 group-hover:translate-x-0 transition-transform duration-300' >
                 <span onClick={()=>dispatch(addToCart({
-                _id:id,
+                id:id,
                 brand:brand,
                 category:category,
                 image:image,
@@ -41,7 +41,7 @@ function Products({ productData }: any) {
                   <HiShoppingCart />
                 </span>
                 <span onClick={()=>dispatch(addToFavorite({
-                  _id:id,
+                  id:id,
                   brand:brand,
                   category:category,
                   image:image,
@@ -79,7 +79,7 @@ function Products({ productData }: any) {
               </div>
 
               <button onClick={()=>dispatch(addToCart({
-                _id:id,
+                id:id,
                 brand:brand,
                 category:category,
                 image:image,

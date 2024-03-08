@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { StateProps } from '../../../type';
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useEffect } from 'react';
-import { addUser } from '@/store/nextSlice';
+import { addUser, setIsLoading } from '@/store/nextSlice';
 
 function Header() {
   const {productData, favoriteData, userInfo} = useSelector((state:StateProps)=>state.next)
@@ -30,7 +30,7 @@ function Header() {
     <div className='w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50'>
       <div className='h-full w-full mx-auto inline-flex items-center justify-between gap-1 mdl:gap-3 px-4'>
         {/* logo */}
-        <Link href='/' className='px-2 border border-transparent hover:border-white cursor-pointer duration-300 flex items-center justify-center h-[70%]'>
+        <Link onClick={()=>dispatch(setIsLoading(true))} href='/' className='px-2 border border-transparent hover:border-white cursor-pointer duration-300 flex items-center justify-center h-[70%]'>
           <Image className="w-28 object-cover mt-1" src={logoIcon} alt="logoImg"></Image>
         </Link>
         {/* Delivery To  */}
